@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+ext {
+    vertxVersion = "4.0.3"
+    junitJupiterVersion = "5.7.0"
+    logbackVersion = "1.2.3"
+}
+dependencies {
+    implementation(platform("io.vertx:vertx-stack-depchain:$vertxVersion"))
+    implementation("io.vertx:vertx-web")
+}
+
+dependencies {
+    implementation "ch.qos.logback:logback-classic:$logbackVersion"
+}
+
+dependencies {
+    testImplementation("io.vertx:vertx-junit5")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
+}
+application {
+    // Define the main class for the application.
+    mainClass = 'com.nexllence.workshops.reactive.architecture.vertx.Main'
+}
