@@ -6,7 +6,7 @@ import io.vertx.core.VertxOptions;
 public class Main {
 
 	public static void main(String[] args) {
-		Vertx vertx = Vertx.vertx(new VertxOptions().setWorkerPoolSize(5));
+		Vertx vertx = Vertx.vertx();
 		vertx.deployVerticle(new ServerHttpVerticle());
 	}
 }
