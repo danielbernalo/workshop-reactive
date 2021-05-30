@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 version 'unspecified'
@@ -17,4 +18,9 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'com.nexllence.workshops.reactive.architecture.StandardHttpServer'
 }
